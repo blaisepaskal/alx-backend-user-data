@@ -23,6 +23,15 @@ def abort_401() -> str:
     abort(401)
 
 
+@app_views.route('/forbidden', methods=['GET'], strict_slashes=False)
+def abort_403() -> str:
+    """ GET /api/v1/forbidden
+    Return:
+      - handles forbidden endpoint
+    """
+    abort(403)
+
+
 @app_views.route('/stats/', strict_slashes=False)
 def stats() -> str:
     """ GET /api/v1/stats
